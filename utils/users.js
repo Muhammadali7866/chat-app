@@ -5,7 +5,7 @@ function userJoin(id, username, room) {
   users.push(user);
   return user;
 }
-
+// gfthtyw
 // get current user
 function getCurrentUser(id) {
   return users.find((user) => user.id === id);
