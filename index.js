@@ -1,11 +1,15 @@
 const express = require("express");
 const app = express();
 const http = require("http");
+require("./utils/db");
 const server = http.createServer(app);
 const socketio = require("socket.io");
 const io = socketio(server);
 const formatMessage = require("./utils/message");
 const chatBot = "Chatbot Cord";
+const userRoutes = require("./routes/userRoutes");
+app.use(express.json());
+app.use("/api/v1/user/", userRoutes);
 
 // integrate static file
 const path = require("path");
